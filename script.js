@@ -1,7 +1,5 @@
 
 
-//Canvas are implemented with Fabric, which is an external library included as a seperate script
-
 let JeepCherokee = {
   model: "Jeep Cherokee",
   image: "jeepcherokee.jpeg",
@@ -329,7 +327,9 @@ function navBarAnimations(id) {
   document.getElementById(id).classList.add("fadeIn");
 }
 //Animates the navbar dropping
-
+function checkoutPageAnimations() {
+  navBarAnimations("snav");
+}
 function homePageAnimations() {
   let currentImageHeight = 40;
   let currentTitleHeight = 0;
@@ -446,179 +446,18 @@ function catalogPageAnimations() {
 
   localStorage.removeItem("cart");
 
-  disabledCars = [];
-
-  for (let i = 0; i < cars.length; i++) {
-    let carObj = JSON.parse(cars[i]);
-
-    if (carObj.type === "Economy") {
-      if (Math.random() > 0.9) {
-        document.getElementById(carObj.id).value = "Unavaliable";
-        document.getElementById(carObj.id).classList.toggle("butDisabled");
-        document
-          .getElementById(carIdList[carObj.id])
-          .classList.toggle("carDisabled");
-
-        disabledCars.push(idList[carObj.id]);
-        document.getElementById(carObj.id).disabled = true;
-      }
-    } else if (carObj.type === "Luxury") {
-      if (carObj.id === "c4") {
-        if (Math.random() > 0.35) {
-          document.getElementById(carObj.id).value = "Unavaliable";
-          document.getElementById(carObj.id).classList.toggle("butDisabled");
-          document
-            .getElementById(carIdList[carObj.id])
-            .classList.toggle("carDisabled");
-          disabledCars.push(idList["c4"]);
-          document.getElementById("c4").disabled = true;
-        }
-      } else {
-        if (Math.random() > 0.85) {
-          document.getElementById(carObj.id).value = "Unavaliable";
-          document.getElementById(carObj.id).classList.toggle("butDisabled");
-          document
-            .getElementById(carIdList[carObj.id])
-            .classList.toggle("carDisabled");
-          disabledCars.push(idList[carObj.id]);
-          document.getElementById(carObj.id).disabled = true;
-        }
-      }
-    }
-  }
-
   if (localStorage.getItem("flag")) {
     localStorage.setItem("flag", false);
     localStorage.removeItem("flag");
-
     document.getElementById("rhl").click();
     document.getElementById("rlh").click();
-    for (let i = 0; i < disabledCars.length; i++) {
-      if (disabledCars[i] == c[i]) {
-        c.splice(c.indexOf(disabledCars[i]), 1);
-        i--;
-      }
-    }
-    let sumCost = 0;
-    for (let i = 0; i < c.length; i++) {
-      sumCost += c[i].cost;
-    }
-    localStorage.setItem("avgCost", (sumCost / c.length).toFixed(2));
     location.href = "index.html";
   }
 }
 //Adds the sorting function, determines which cars are avaliable, either by random choice or if it is already in cart
 
-function checkoutPageAnimations() {
-  navBarAnimations("snav");
 
-  let cartPage = document.getElementById("cList");
-  cart = JSON.parse(localStorage.getItem("cart"));
-  let cartArr = Array.from(cart);
-  for (let i = 0; i < cartArr.length; i++) {
-    cartArr[i] = JSON.parse(cartArr[i]);
-  }
-  cart = new Set(cartArr);
-  let cost = 0;
-  localStorage.removeItem("cart");
 
-  for (let i = 0; i < cart.size; i++) {
-    let newCartEntry =
-      "<div class='cartEntry' id='cartEntry" +
-      i +
-      "'> <img class='cartImg' src=" +
-      cartArr[i].image +
-      "> <p class='cartDesc'> " +
-      cartArr[i].model +
-      "</p> <p class='cartDesc'>" +
-      cartArr[i].type +
-      "</p> <p class='cartDesc'>$" +
-      cartArr[i].cost +
-      "</p> <button class='removeBut' id='delButton" +
-      i +
-      "'></button> </div>";
-    cartPage.innerHTML += newCartEntry;
-
-    cost += cartArr[i].cost;
-    delMap["delButton" + i] = cartArr[i].id;
-  }
-
-  for (let i = 0; i < cart.size; i++) {
-    document
-      .getElementById("delButton" + i)
-      .addEventListener("click", function () {
-        let cartArr = Array.from(cart);
-
-        for (let i = 0; i < cartArr.length; i++) {
-          cartArr[i] = JSON.stringify(cartArr[i]);
-          console.log(cartArr[i]);
-        }
-
-        let cartItem =
-          cartArr[
-            cartArr.indexOf(JSON.stringify(idList[delMap["delButton" + i]]))
-          ];
-        console.log(JSON.stringify(idList[delMap["delButton" + i]]));
-        let deduction = JSON.parse(cartItem).cost;
-
-        document.getElementById("cartEntry" + i).classList.add("hidden");
-
-        cost -= deduction;
-        localStorage.setItem("cost", cost);
-
-        cartArr.splice(cartArr.indexOf(cartItem), 1);
-
-        for (let i = 0; i < cartArr.length; i++) {
-          cartArr[i] = JSON.parse(cartArr[i]);
-        }
-        if (cartArr.length < 1) {
-          document.getElementById("checkoutMenuForm").classList.add("hidden");
-        }
-
-        cart = new Set(cartArr);
-
-        costCalc();
-      });
-  }
-
-  document.getElementById("cost").innerHTML += cost.toFixed(2) + " per day";
-  localStorage.setItem("cost", cost.toFixed(2));
-}
-//Renders cart into a list, adds remove from cart functionality, and loads invoice form
-
-function invoicePageAnimations() {
-  navBarAnimations("inav");
-  backgroundAnimations();
-
-  let invoiceString =
-    "<p class='invoiceData'>A loyal customer of IMSA Cars, " +
-    localStorage.getItem("name") +
-    ", purchased a <br> ";
-
-  let rawCartArr = Array.from(JSON.parse(localStorage.getItem("cart")));
-
-  for (let i = 0; i < rawCartArr.length; i++) {
-    rawCartArr[i] = JSON.parse(rawCartArr[i]);
-    invoiceString += "*** " + rawCartArr[i].model + "<br>";
-  }
-  invoiceString +=
-    "These cars will be rented for " +
-    localStorage.getItem("days") +
-    " days for a grand total of $" +
-    (localStorage.getItem("cost") * localStorage.getItem("days")).toFixed(2) +
-    "<br> Email: " +
-    localStorage.getItem("email") +
-    "<br> Phone Number: " +
-    localStorage.getItem("pnum") +
-    "<br> Credit Card Number: " +
-    localStorage.getItem("cardnum") +
-    "<br> Proof of Purchase: <br> <img class='signatureInvoice' src='" +
-    localStorage.getItem("signature") +
-    "'> <br> Thank you very much for your purchase, we hope to see you again! </p>";
-
-  document.getElementById("invoice").innerHTML = invoiceString;
-}
-//Creates the invoice based on form data saved in localStorage
 
 function loginPageAnimations() {
   navBarAnimations("lnav");
@@ -655,23 +494,7 @@ function loginPageAnimations() {
 }
 //Loads the modal for the login
 
-function secretPageAnimations() {
-  navBarAnimations("snav");
 
-  let offset = -70;
-
-  setInterval(function () {
-    document.getElementById("weeb").style.backgroundPosition =
-      offset + "px " + (-500 + offset) + "px";
-    document.getElementById("weeb2").style.transform =
-      "rotate(" + offset + "deg)";
-    document.getElementById("weeb3").style.transform =
-      "rotate(" + -offset + "deg)";
-    document.getElementById("weeb4").style.transform =
-      "rotate(" + 2 * offset + "deg)";
-    offset += 20;
-  }, 20);
-}
 //Animations for spinning pics and background
 
 function backgroundAnimations() {
@@ -705,113 +528,11 @@ function checkoutCart() {
 }
 //Reveals form if there are items in cart
 
-function invoiceLoad() {
-  console.log("form was submitted");
 
-  let canvas = document.getElementById("sig");
-
-  let signature = canvas.toDataURL();
-
-  localStorage.setItem("signature", signature);
-
-  let name =
-    document.getElementById("fname").value +
-    " " +
-    document.getElementById("lname").value;
-
-  localStorage.setItem("name", name);
-
-  let email = document.getElementById("email").value;
-
-  localStorage.setItem("email", email);
-
-  let pnum = document.getElementById("pnum").value;
-
-  localStorage.setItem("pnum", pnum);
-
-  let cardnum = document.getElementById("cardnum").value;
-
-  localStorage.setItem("cardnum", cardnum);
-
-  let newCart = [];
-
-  let cartArr = Array.from(cart);
-
-  for (let j = 0; j < cartArr.length; j++) {
-    let obj = JSON.stringify(cartArr[j]);
-    newCart.push(obj);
-  }
-
-  console.log("cart before invoice" + cartArr);
-
-  localStorage.setItem("cart", JSON.stringify(newCart));
-  localStorage.setItem("days", document.getElementById("days").value);
-  location.href = "invoice.html";
-}
-//Form Submission data saving
-
-function costCalc() {
-  let days = document.getElementById("days").value;
-  let cost = parseFloat(localStorage.getItem("cost"));
-  document.getElementById("cost").innerHTML =
-    "Total Cost: $" + (days * cost).toFixed(2) + " for " + days + " days";
-  localStorage.setItem("cost", cost);
-}
 //Updates total cost during checkout
 
-function couponChecker() {
-  let coupons = [
-    "wergf",
-    "hypi",
-    "weeb22",
-    "imsacars",
-    "save20",
-    "notlateatall",
-  ];
 
-  let ogCost = JSON.parse(localStorage.getItem("cost"));
 
-  if (coupons.includes(document.getElementById("coupons").value)) {
-    localStorage.setItem("cost", ogCost * 0.9);
-    document.getElementById("coupons").style.border =
-      "5px solid rgb(140, 255, 184)";
-    costCalc();
-    document.getElementById("discountSpan").classList.add("fadeInQ");
-    document.getElementById("discountSpan").style.display = "block";
-    document.getElementById("discountSpan").innerHTML =
-      "Coupon Code Detected, 10% Discount applied!!!!";
-    document.getElementById("coupons").disabled = true;
-  } else {
-    localStorage.setItem("cost", ogCost);
-    costCalc();
-    document.getElementById("coupons").style.border = "1px solid black";
-    document.getElementById("discountSpan").style.display = "none";
-  }
-}
-//Validates coupon codes and gives discount
-
-function carCartAnimation(img) {
-  document.getElementById("cani").src = img;
-  document.getElementById("cani").classList.remove("hidden");
-
-  let offset = 0;
-
-  let anim = setInterval(function () {
-    document.getElementById("cani").style.left = offset + "px";
-    document.getElementById("cani").style.boxShadow =
-      "10px 10px 69px 21px " + randomColor();
-    document.getElementById("cani").style.top = window.scrollY + 150 + "px";
-
-    document.getElementById("cani").style.transform =
-      "rotate(" + offset * 0.5 + "deg)";
-    offset += 10;
-
-    if (offset >= 2300) {
-      document.getElementById("cani").left = 0;
-      clearInterval(anim);
-    }
-  }, 15);
-}
 //Does the Spinning Car Animation when adding to cart
 
 function sorting(id) {
