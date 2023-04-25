@@ -299,10 +299,6 @@ if (window.location.href.match("index.html") != null) {
     document.getElementById("lStyle2").style.transitionDuration = "400ms";
   }, 400);
 } else {
-  window.addEventListener("load", secretPageAnimations);
-  document.getElementById("clearDoodle").addEventListener("click", function () {
-    drawCanvas.clear();
-  });
 }
 //Intro animations for pages upon loading in
 
