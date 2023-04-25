@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="navbar" id="cnav">
+
+        <button class="invis nav home" id="homePage">Home</button>
+        <button class="invis nav cat" id="catalogPage">Articles</button>
+        <button class="invis nav shop" id="shopPage">AI Analysis</button>
+        <button class="invis nav login" id="logInPage">Log-In</button>
+
+    </div>
+
+    <div id="cHead">
+    
+        <p class="headerTitle"> Articles </p>
+
+        <p class="headerDesc"> Browse our massive database of news articles, featuring the current</p>
+    
+    </div>
+
+    <img src="" class="carAni hidden" id="cani">
+
+    <div class="dropdown">
+        <button class="dropbtn" id="sortBut">Sort By...</button>
+        <div class="dropdown-content slide" id="dcontent">
+          <button class="dropOp" id="rlh">Rating (Low-High)</button>
+          <button class="dropOp" id="rhl">Rating (High-Low)</button>
+          <button class="dropOp" id="tel">Type (Economy-Luxury)</button>
+          <button class="dropOp" id="tle">Type (Luxury-Economy)</button>
+          <button class="dropOp" id="clh">Cost (Low-High)</button>
+          <button class="dropOp" id="chl">Cost (High-Low)</button>
+        </div>
+    </div>
+
+    <div class="cars" id="catDisplay">
+
+        <div class="carDisplay fadeIn" id="c100">
+
+            <img class="carImage nysize" src="nytimes.png">
+            <p class="carDesc">Model: Jeep Cherokee <br>  Type: Economy <br>  Cost: $29.99/day <br> Rating: 8.5</p>
+
+            <input type="button" class="carButton" id="c1" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c21">
+
+            <img class="carImage" src="fox.png">
+            <p class="carDesc">Model: Tesla Model X <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.1 </p>
+
+            <input type="button" class="carButton" id="c2" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c32">
+
+            <img class="carImage" src="cnn'.png">
+            <p class="carDesc">Model: Toyota Camry <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 7.9 </p>
+
+            <input type="button" class="carButton" id="c3" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c43">
+            <img class="carImage" src="nbc.png" id="lambo">
+            <p class="carDesc">Model: Lamborghini Aventador <br>  Type: Super-Luxury <br> Cost: $69.99/day <br> Rating: 10!! </p>
+
+            <input type="button" class="carButton" id="c4" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c54">
+
+            <img class="carImage nysize" src="ap.png">
+            <p class="carDesc">Model: Honda Odyssey  <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 8.3 </p>
+            <input type="button" class="carButton" id="c5" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c65">
+
+            <img class="carImage" src="npr.png">
+            <p class="carDesc">Model: Porsche 911  <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.5 </p>
+            <input type="button" class="carButton" id="c6" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c76">
+
+            <img class="carImage" src="vox.png">
+            <p class="carDesc">Model: Lexus NX  <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 8.7 </p>
+            <input type="button" class="carButton" id="c7" value="Select"></input>
+
+        </div>
+
+        <div class="carDisplay fadeIn" id="c87">
+
+            <img class="carImage" src="guard.png">
+            <p class="carDesc">Model: Dodge Charger  <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.3 </p>
+            <input type="button" class="carButton" id="c8" value="Select"></input>
+
+        </div>
+        <div class="carDisplay fadeIn" id="c98">
+
+            <img class="carImage" src="abc.png">
+            <p class="carDesc">Model: Volvo XC90  <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 9.5 </p>
+            <input type="button" class="carButton" id="c9" value="Select"></input>
+
+        </div>
+        <div class="carDisplay fadeIn" id="c109">
+
+            <img class="carImage" src="pbs.png
+            ">
+            <p class="carDesc">Model: Ford Mustang  <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.2 </p>
+            <input type="button" class="carButton" id="c10" value="Select"></input>
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+
+        <button class="invis foot home">Home</button>
+        <button class="invis foot cat">Catalog</button>
+        <button class="invis foot shop">Shop</button>
+        <button class="invis foot secret">Secret...</button>
+        <br>
+
+        <p id="footerText"> This project was created by Shrikar Dulam for SLX. This is not an
+            actual product, just an MVP, and no personal info will be processed or
+            stored in any form. Thank you for visiting this site!</p>
+        <br>
+
+    </div>
+
+    
+</body>
+
+<script src="fabric.js"></script>
+<script src="script.js"></script>
+</html>
