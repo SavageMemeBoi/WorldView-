@@ -792,6 +792,46 @@ body{
 
 }
 
+.titleInfo{
+
+
+    display: inline-flex;
+    float: left;
+
+}
+
+
+.big{
+
+    font-size: 50px;
+
+
+}
+
+.lefts{
+
+    float: left;
+    width: 500px;
+    color: blue;
+
+}
+
+.rights{
+
+    float: right;
+    width: 500px;
+    color: purple;
+
+
+}
+
+.mid{
+
+    color: red;
+    width: 500px;
+
+}
+
 @keyframes slideB {
     0% { margin-top: 35px; opacity: 1;}
     100% { margin-top: 0px;  opacity: 0;}
