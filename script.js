@@ -1,83 +1,82 @@
 
-
 let JeepCherokee = {
-  model: "Jeep Cherokee",
-  image: "jeepcherokee.jpeg",
-  type: "Economy",
-  cost: 29.99,
-  rating: 8.5,
+  model: "NYTimes",
+  image: "nytimes.png",
+  type: "Current",
+  cost: 0.5,
+  rating: 5,
   id: "c1",
 };
 let TeslaX = {
-  model: "Tesla Model X",
-  image: "teslax.jpeg",
-  type: "Luxury",
-  cost: 49.99,
-  rating: 9.1,
+  model: "Fox",
+  image: "fox.png",
+  type: "Current",
+  cost: -1,
+  rating: 6,
   id: "c2",
 };
 let ToyotaCamry = {
-  model: "Toyota Camry",
-  image: "toyotacam.jpeg",
+  model: "CNN",
+  image: "cnn'.png",
   type: "Economy",
-  cost: 29.99,
-  rating: 7.9,
+  cost: 1,
+  rating: 2,
   id: "c3",
 };
 let LamboAventador = {
-  model: "Lamborghini Aventador",
-  image: "lamboavent.jpeg",
-  type: "Luxury",
-  cost: 69.99,
-  rating: 10,
+  model: "NBC",
+  image: "nbc.png",
+  type: "Politics",
+  cost: 0.9,
+  rating: 3,
   id: "c4",
 };
 let HondaOdyssey = {
-  model: "Honda Odyssey",
-  image: "hondaods.jpeg",
-  type: "Economy",
-  cost: 29.99,
-  rating: 8.3,
+  model: "AP",
+  image: "ap.png",
+  type: "Current",
+  cost: 0.1,
+  rating: 7,
   id: "c5",
 };
 let Porsche911 = {
-  model: "Porsche 911",
-  image: "porsche911.jpeg",
-  type: "Luxury",
-  cost: 49.99,
-  rating: 9.5,
+  model: "NPR",
+  image: "npr.png",
+  type: "Science",
+  cost: 1,
+  rating: 10,
   id: "c6",
 };
 let LexusNX = {
-  model: "Lexus NX",
-  image: "lexusnx90.jpeg",
-  type: "Economy",
-  cost: 29.99,
-  rating: 8.7,
+  model: "Vox",
+  image: "vox.png",
+  type: "Politics",
+  cost: 0.4,
+  rating: 4,
   id: "c7",
 };
 let DodgeCharger = {
-  model: "Dodge Charger",
-  image: "dodgecharger.jpeg",
-  type: "Luxury",
-  cost: 49.99,
-  rating: 9.3,
+  model: "The Guardian",
+  image: "guard.png",
+  type: "Tech",
+  cost: 0.8,
+  rating: 9,
   id: "c8",
 };
 let VolvoXC90 = {
-  model: "Volvo XC90",
-  image: "volvoxc90.jpeg",
-  type: "Economy",
-  cost: 29.99,
-  rating: 8.4,
+  model: "ABC",
+  image: "abc.png",
+  type: "Current",
+  cost: 0.6,
+  rating: 8,
   id: "c9",
 };
 let FordMustang = {
-  model: "Ford Mustang",
-  image: "fordmustang.jpeg",
-  type: "Luxury",
-  cost: 49.99,
-  rating: 9.2,
+  model: "PBS",
+  image: "pbs.png",
+  type: "Current",
+  cost: -0.2,
+  rating: 1,
   id: "c10",
 };
 // Objects to represent each car
@@ -140,16 +139,29 @@ let carIdList = {
 let delMap = {};
 
 let imgMap = {
-  c1: "jeepcherokee.jpeg",
-  c2: "teslax.jpeg",
-  c3: "toyotacam.jpeg",
-  c4: "lamboavent.jpeg",
-  c5: "hondaods.jpeg",
-  c6: "porsche911.jpeg",
-  c7: "lexusnx90.jpeg",
-  c8: "dodgecharger.jpeg",
-  c9: "volvoxc90.jpeg",
-  c10: "fordmustang.jpeg",
+  c1: "nytimes.png",
+  c2: "fox.png",
+  c3: "cnn'.png",
+  c4: "nbc.png",
+  c5: "ap.png",
+  c6: "npr.png",
+  c7: "vox.png",
+  c8: "guard.png",
+  c9: "abc.png",
+  c10: "pbs.png",
+};
+
+let linkMap = {
+  c1: "https://www.nytimes.com/live/2023/01/20/us/biden-2024-president-election-news",
+  c2: "https://www.foxnews.com/politics/washington-governor-signs-big-gun-control-package-including-assault-weapons-ban-no-one-needs-ar-15",
+  c3: "https://www.cnn.com/2023/04/25/business/bed-bath-beyond-share-repurchases/index.html",
+  c4: "https://www.nbcnews.com/news/world/south-korea-yoon-suk-yeol-biden-us-rcna81279",
+  c5: "https://apnews.com/article/taliban-isis-abbey-gate-afghanistan-bombing-9a9cb492bb1352a615af8815e715b17a?utm_source=homepage&utm_medium=TopNews&utm_campaign=position_01",
+  c6: "https://www.npr.org/2023/04/21/1170986221/californias-destructively-wet-winter-has-a-bright-side-youll-want-to-see-it",
+  c7: "https://www.vox.com/technology/2023/4/25/23698083/tucker-carlson-fired-theory-fox-news-peter-kafka-media-column",
+  c8: "https://www.theguardian.com/society/2023/apr/25/barbie-doll-with-downs-syndrome-launched-by-mattel",
+  c9: "https://abcnews.go.com/GMA/Culture/harry-belafonte-actor-pioneering-calypso-singer-dies-96/story?id=98827996",
+  c10: "https://www.pbs.org/newshour/show/hundreds-of-thousands-flee-sudan-as-humanitarian-situation-deteriorates-amid-violence",
 };
 
 // Dictionaries (Key-Value Pairs) for linking elements together for iteration
@@ -158,45 +170,20 @@ let teslaImage = document.getElementById("hImag");
 //homepage img
 
 for (let i = 0; i < document.getElementsByClassName("home").length; i++) {
-  document
-    .getElementsByClassName("home")
-    [i].addEventListener("click", function () {
+  document.getElementsByClassName("home")[i].addEventListener("click", function () {
       location.href = "index.html";
     });
 }
 
 for (let i = 0; i < document.getElementsByClassName("cat").length; i++) {
-  document
-    .getElementsByClassName("cat")
-    [i].addEventListener("click", function () {
-      let newCart = [];
-      let cartArr = Array.from(cart);
-
-      for (let j = 0; j < cartArr.length; j++) {
-        let obj = JSON.stringify(cartArr[j]);
-        newCart.push(obj);
-      }
-
-      localStorage.setItem("cart", JSON.stringify(newCart));
-
+  document.getElementsByClassName("cat")[i].addEventListener("click", function () {
       location.href = "catalog.html";
     });
 }
 
 for (let i = 0; i < document.getElementsByClassName("shop").length; i++) {
-  document
-    .getElementsByClassName("shop")
-    [i].addEventListener("click", function () {
-      let newCart = [];
-      let cartArr = Array.from(cart);
-
-      for (let j = 0; j < cartArr.length; j++) {
-        let obj = JSON.stringify(cartArr[j]);
-        newCart.push(obj);
-      }
-
-      localStorage.setItem("cart", JSON.stringify(newCart));
-      location.href = "shop.html";
+  document.getElementsByClassName("shop")[i].addEventListener("click", function () {
+      location.href = "ai.html";
     });
 }
 
@@ -208,45 +195,21 @@ for (let i = 0; i < document.getElementsByClassName("login").length; i++) {
     });
 }
 
-for (let i = 0; i < document.getElementsByClassName("secret").length; i++) {
-  document
-    .getElementsByClassName("secret")
-    [i].addEventListener("click", function () {
-      if (JSON.parse(localStorage.getItem("isLogged"))) {
-        location.href = "secret.html";
-      }
-    });
-}
+
 //Adding page redirects for navbar and other page buttons
 
 function carCartAdd() {
-  for (
-    let i = 0;
-    i < document.getElementsByClassName("carButton").length;
-    i++
-  ) {
-    document
-      .getElementsByClassName("carButton")
-      [i].addEventListener("click", function () {
-        let chosenCar =
-          idList[document.getElementsByClassName("carButton")[i].id];
-        cart.add(chosenCar);
-        document.getElementsByClassName("carButton")[i].value = "Added to Cart";
-        document.getElementsByClassName("carButton")[i].style.backgroundColor =
-          "rgb(230, 225, 180)";
-        document.getElementsByClassName("carButton")[i].style.border =
-          "2px solid black";
-        document.getElementById(
-          carIdList[document.getElementsByClassName("carButton")[i].id]
-        ).style.backgroundColor = "rgb(127, 255, 176)";
-        carCartAnimation(
-          imgMap[document.getElementsByClassName("carButton")[i].id]
-        );
+
+  for (let i = 0; i < document.getElementsByClassName("carButton").length; i++) {
+    document.getElementsByClassName("carButton")[i].addEventListener("click", function () {
+        
+        console.log("Clicked");
+        location.href = linkMap[document.getElementsByClassName("carButton")[i].id];
+
+      
       });
   }
 }
-carCartAdd();
-//Adding Cars to Cart
 
 if (window.location.href.match("index.html") != null) {
   window.addEventListener("load", homePageAnimations);
@@ -273,7 +236,8 @@ if (window.location.href.match("index.html") != null) {
         sorting(document.getElementsByClassName("dropOp")[i].id);
       });
   }
-} else if (window.location.href.match("shop.html") != null) {
+  carCartAdd();
+} else if (window.location.href.match("ai.html") != null) {
   window.addEventListener("load", checkoutPageAnimations);
   document.getElementById("checkout").addEventListener("click", checkoutCart);
   setInterval(function () {
@@ -296,22 +260,8 @@ if (window.location.href.match("index.html") != null) {
       "10px solid " + randomColor();
     document.getElementById("lStyle2").style.transitionDuration = "400ms";
   }, 400);
-} else {
-}
+} else {}
 //Intro animations for pages upon loading in
-
-window.addEventListener("beforeunload", function () {
-  let newCart = [];
-  let cartArr = Array.from(cart);
-
-  for (let j = 0; j < cartArr.length; j++) {
-    let obj = JSON.stringify(cartArr[j]);
-    newCart.push(obj);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(newCart));
-});
-// Saving Cart on reload (safety precaution, probably doesn't work as intended but :D)
 
 function navBarAnimations(id) {
   let currentImageHeight = -70;
@@ -384,10 +334,8 @@ function catalogPageAnimations() {
     if (num % 2 == 0) {
       document.getElementById("dcontent").classList.remove("slideB");
       document.getElementById("dcontent").style.display = "block";
-      console.log("appe");
     } else {
       document.getElementById("dcontent").classList.add("slideB");
-      console.log("disp");
       setTimeout(function () {
         document.getElementById("dcontent").style.display = "none";
       }, 600);
@@ -396,68 +344,8 @@ function catalogPageAnimations() {
     num++;
   });
 
-  let c = [
-    JeepCherokee,
-    TeslaX,
-    ToyotaCamry,
-    LamboAventador,
-    HondaOdyssey,
-    Porsche911,
-    LexusNX,
-    DodgeCharger,
-    VolvoXC90,
-    FordMustang,
-  ];
-
-  let cars = [];
-
-  for (let i = 0; i < c.length; i++) {
-    cars[i] = JSON.stringify(c[i]);
-  }
-
-  cart = JSON.parse(localStorage.getItem("cart"));
-  let cartArr = Array.from(cart);
-  console.log(cartArr);
-
-  for (let i = 0; i < cartArr.length; i++) {
-    cartArr[i] = JSON.parse(cartArr[i]);
-
-    for (let j = 0; j < cars.length; j++) {
-      let carListedCar = cars[j];
-      let stringCartItem = JSON.stringify(cartArr[i]);
-
-      if (carListedCar === stringCartItem) {
-        document.getElementById(c[cars.indexOf(stringCartItem)].id).value =
-          "Unavaliable (In Cart)";
-        document
-          .getElementById(c[cars.indexOf(stringCartItem)].id)
-          .classList.toggle("butDisabled");
-        document
-          .getElementById(carIdList[c[cars.indexOf(stringCartItem)].id])
-          .classList.toggle("carDisabled");
-        document.getElementById(
-          c[cars.indexOf(stringCartItem)].id
-        ).disabled = true;
-      }
-    }
-  }
-  cart = new Set(cartArr);
-  console.log(cart);
-
-  localStorage.removeItem("cart");
-
-  if (localStorage.getItem("flag")) {
-    localStorage.setItem("flag", false);
-    localStorage.removeItem("flag");
-    document.getElementById("rhl").click();
-    document.getElementById("rlh").click();
-    location.href = "index.html";
-  }
 }
 //Adds the sorting function, determines which cars are avaliable, either by random choice or if it is already in cart
-
-
-
 
 function loginPageAnimations() {
   navBarAnimations("lnav");
@@ -495,19 +383,6 @@ function loginPageAnimations() {
 //Loads the modal for the login
 
 
-//Animations for spinning pics and background
-
-function backgroundAnimations() {
-  let offset = -70;
-
-  setInterval(function () {
-    document.getElementById("iHead").style.backgroundPosition =
-      offset + "px -500px";
-    offset += 10;
-  }, 20);
-}
-//Background animation for car on invoice page
-
 function randomColor() {
   var col =
     "rgb(" +
@@ -520,21 +395,7 @@ function randomColor() {
   return col;
 }
 //Generates random color for title animation
-
-function checkoutCart() {
-  if (!cart.size == 0) {
-    document.getElementById("checkoutMenuForm").classList.remove("hidden");
-  }
-}
-//Reveals form if there are items in cart
-
-
-//Updates total cost during checkout
-
-
-
-//Does the Spinning Car Animation when adding to cart
-
+                 
 function sorting(id) {
   console.log("clicked");
 

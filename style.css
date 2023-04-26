@@ -8,7 +8,7 @@ body{
 
     margin: auto;
     margin-top: 20px;
-    margin-left: 50px
+    margin-left: 50px;
     position: absolute;
     text-align: center;
 }
@@ -294,7 +294,7 @@ body{
     position: relative;
     background-position: center;
     background-size: cover;
-    background-image: url("carcat.webp");
+    background-image: url("newsc.jpeg");
     background-position: 0px -120px;
     background-attachment: fixed;
     color: black;
@@ -785,6 +785,13 @@ body{
 
 }
 
+.subtext{
+
+
+    color: rgb(86, 255, 24);
+
+}
+
 @keyframes slideB {
     0% { margin-top: 35px; opacity: 1;}
     100% { margin-top: 0px;  opacity: 0;}
@@ -792,24 +799,24 @@ body{
 
 .headerDesc{
 
-    width: 800px;
+    width: 1200px;
     margin: auto;
-    right: 400px;
-    top: 200px;
-    position: absolute;
+    position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: bold;
+    font-size: 60px; 
 
 }
 
 .headerTitle{
 
-    font-size: 80px;
-    position: absolute;
-    right: 700px;
-    top: 0px;
+    font-size: 180px;
+    position: relative;
     margin: auto;
+    justify-content: center;
+    text-align: center;
     margin-top: 90px;
+    padding-top: 70px;
     font-family: 'Gill Sans';
     color: white;
     -webkit-text-stroke: 2px black;

@@ -24,21 +24,19 @@
     
         <p class="headerTitle"> Articles </p>
 
-        <p class="headerDesc"> Browse our massive database of news articles, featuring the current</p>
+        <p class="headerDesc subtext"> Browse our massive database of news articles, featuring everything from the current news to the latest trends</p>
     
     </div>
-
-    <img src="" class="carAni hidden" id="cani">
 
     <div class="dropdown">
         <button class="dropbtn" id="sortBut">Sort By...</button>
         <div class="dropdown-content slide" id="dcontent">
-          <button class="dropOp" id="rlh">Rating (Low-High)</button>
-          <button class="dropOp" id="rhl">Rating (High-Low)</button>
-          <button class="dropOp" id="tel">Type (Economy-Luxury)</button>
-          <button class="dropOp" id="tle">Type (Luxury-Economy)</button>
-          <button class="dropOp" id="clh">Cost (Low-High)</button>
-          <button class="dropOp" id="chl">Cost (High-Low)</button>
+          <button class="dropOp" id="rlh">Latest-Oldest </button>
+          <button class="dropOp" id="rhl">Oldest-Latest</button>
+          <button class="dropOp" id="tel">Current Events</button>
+          <button class="dropOp" id="tle">Other Topics</button>
+          <button class="dropOp" id="clh">Left-Right</button>
+          <button class="dropOp" id="chl">Right-Left</button>
         </div>
     </div>
 
@@ -49,8 +47,9 @@
             <img class="carImage nysize" src="nytimes.png">
             <p class="carDesc">
                 April 25, 2023, 3:09 p.m. ET <br>
-                It's Time to Finish the Job: Biden Begins His 2024 Campaign
-                In a speech after announcing his candidacy, President Biden called himself “the most pro-union president” in history and said Republicans favored the rich.
+                It's Time to Finish the Job: Biden Begins His 2024 Campaign <br> Peter Baker
+            
+            </p>
                 
 
             <input type="button" class="carButton" id="c1" value="See More..."></input>
@@ -60,7 +59,7 @@
         <div class="carDisplay fadeIn" id="c21">
 
             <img class="carImage" src="fox.png">
-            <p class="carDesc">Model: Tesla Model X <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.1 </p>
+            <p class="carDesc"> April 25, 2023 2:59pm EDT <br> Washington gov signs big gun control package, including 'assault weapons' ban: 'No one needs an AR-15' <br> Hannah Ray Lambert</p>
 
             <input type="button" class="carButton" id="c2" value="See More..."></input>
 
@@ -69,7 +68,7 @@
         <div class="carDisplay fadeIn" id="c32">
 
             <img class="carImage" src="cnn'.png">
-            <p class="carDesc">Model: Toyota Camry <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 7.9 </p>
+            <p class="carDesc">April 25, 2023 4:54 PM EDT <br> The $11.8 billion mistake that led to Bed, Bath & Beyond’s demise <br> Chris Isidore</p>
 
             <input type="button" class="carButton" id="c3" value="See More..."></input>
 
@@ -77,7 +76,7 @@
 
         <div class="carDisplay fadeIn" id="c43">
             <img class="carImage" src="nbc.png" id="lambo">
-            <p class="carDesc">Model: Lamborghini Aventador <br>  Type: Super-Luxury <br> Cost: $69.99/day <br> Rating: 10!! </p>
+            <p class="carDesc">April 25, 2023, 3:23 PM CDT <br> Strong relationship with U.S. not hurt by recent leaks, South Korean president says <br> Lester Holt, Jennifer Jett and Stella Kim </p>
 
             <input type="button" class="carButton" id="c4" value="See More..."></input>
 
@@ -86,7 +85,7 @@
         <div class="carDisplay fadeIn" id="c54">
 
             <img class="carImage nysize" src="ap.png">
-            <p class="carDesc">Model: Honda Odyssey  <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 8.3 </p>
+            <p class="carDesc">April 25, 2023, 10:23 AM CDT <br> Taliban kill mastermind of suicide bombing at Kabul airport <br> Farnoush Amiri, Matthew Lee, Aamar Madhani, and Lolita C. Baldor</p>
             <input type="button" class="carButton" id="c5" value="See More..."></input>
 
         </div>
@@ -94,7 +93,7 @@
         <div class="carDisplay fadeIn" id="c65">
 
             <img class="carImage" src="npr.png">
-            <p class="carDesc">Model: Porsche 911  <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.5 </p>
+            <p class="carDesc">April 21, 2023  4:28 PM ET <br> California's destructively wet winter has a bright side. You'll want to see it <br> Nathan Rott, Claire Harbage</p>
             <input type="button" class="carButton" id="c6" value="See More..."></input>
 
         </div>
@@ -102,7 +101,7 @@
         <div class="carDisplay fadeIn" id="c76">
 
             <img class="carImage" src="vox.png">
-            <p class="carDesc">Model: Lexus NX  <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 8.7 </p>
+            <p class="carDesc">Apr 25, 2023, 4:20pm EDT <br> No, seriously, why did Fox News fire Tucker Carlson? <br> Peter Kafka </p>
             <input type="button" class="carButton" id="c7" value="See More..."></input>
 
         </div>
@@ -110,14 +109,14 @@
         <div class="carDisplay fadeIn" id="c87">
 
             <img class="carImage" src="guard.png">
-            <p class="carDesc">Model: Dodge Charger  <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.3 </p>
+            <p class="carDesc"> Apr 25, 2023 09:00 EDT <br> Barbie doll with Down’s syndrome launched by Mattel <br> Sarah Marsh </p>
             <input type="button" class="carButton" id="c8" value="See More..."></input>
 
         </div>
         <div class="carDisplay fadeIn" id="c98">
 
             <img class="carImage" src="abc.png">
-            <p class="carDesc">Model: Volvo XC90  <br>  Type: Economy <br> Cost: $29.99/day <br> Rating: 9.5 </p>
+            <p class="carDesc"> April 25, 2023, 9:40 AM <br> Harry Belafonte, actor and pioneering Calypso singer, dies at 96 <br> Sweenie Saint-Vil </p>
             <input type="button" class="carButton" id="c9" value="See More..."></input>
 
         </div>
@@ -125,7 +124,7 @@
 
             <img class="carImage" src="pbs.png
             ">
-            <p class="carDesc">Model: Ford Mustang  <br>  Type: Luxury <br> Cost: $49.99/day <br> Rating: 9.2 </p>
+            <p class="carDesc"> Apr 25, 2023 6:45 PM EDT <br> Hundreds of thousands flee Sudan as humanitarian situation deteriorates amid violence <br> Nick Schifrin, Zeba Warsi</p>
             <input type="button" class="carButton" id="c10" value="See More..."></input>
 
         </div>
@@ -136,9 +135,8 @@
     <div class="footer">
 
         <button class="invis foot home">Home</button>
-        <button class="invis foot cat">Catalog</button>
-        <button class="invis foot shop">Shop</button>
-        <button class="invis foot secret">Secret...</button>
+        <button class="invis foot cat">Articles</button>
+        <button class="invis foot shop">AI Analysis</button>
         <br>
 
         <p id="footerText"> This project was created by Shrikar Dulam for SLX. This is not an
@@ -151,6 +149,5 @@
     
 </body>
 
-<script src="fabric.js"></script>
 <script src="script.js"></script>
 </html>
